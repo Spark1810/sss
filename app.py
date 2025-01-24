@@ -42,7 +42,7 @@ def heart():
     thal = st.selectbox('Thalassemia', thal_options)
     thal_num = thal_options.index(thal)
 
-    with open('model/mean_std_values.pkl', 'rb') as f:
+    with open('mean_std_values.pkl', 'rb') as f:
         mean_std_values = pickle.load(f)
 
 
