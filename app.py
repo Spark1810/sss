@@ -5,7 +5,7 @@ import pickle
 import random
 s=random.randint(15,40)
 
-model_filename = './model/model.pkl'
+model_filename = 'model.pkl'
 
 with open(model_filename, 'rb') as file:
     model = pickle.load(file)
