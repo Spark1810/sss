@@ -72,14 +72,23 @@ def heart():
             prediction_result = 'Positive'
             confidence = prediction_proba[0][1] if prediction[0] == 1 else prediction_proba[0][0]
             riskrate=(((confidence*10000)//1)/100)-s
+            st.markdown(f"<p style='background-color:{bg_color}; color:white; padding:10px;'>Prediction: {prediction_result}<br>Heart Risk Rate : {riskrate}%</p>", unsafe_allow_html=True)
+            st.info("Based on your current health data, You are elevated risk for heart disease. Its important to schedule an appointment with your doctor soon.")
+            st.subheader("Suggestion : Nearby Heart Specialist")
+            st.info("1.G. Kuppuswamy Naidu Memorial Hospital - Contact 0422 430 5300")
+            st.info("2.CARDIAC HEALTH CARE CENTRE - Contact 98422 65626")
+            st.info("3.Dr Ramprakash Heart Clinic - Contact 88839 21571")
+            
+            
+            
         else:
             bg_color = 'green'
             prediction_result = 'Negative'
             confidence = prediction_proba[0][1] if prediction[0] == 1 else prediction_proba[0][0]
             riskrate=0
+            st.markdown(f"<p style='background-color:{bg_color}; color:white; padding:10px;'>Prediction: {prediction_result}</p>", unsafe_allow_html=True)
+            st.info("Your Results show low risk for heart disease. Keep up the good work with your diet, exercise, and regular health checkups.")
         
-
-        st.markdown(f"<p style='background-color:{bg_color}; color:white; padding:10px;'>Prediction: {prediction_result}<br>Heart Risk Rate : {riskrate}%</p>", unsafe_allow_html=True)
 
 
 st.title("Heart Risk Rate Detection System ")
